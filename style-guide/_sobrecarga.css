@@ -1,0 +1,56 @@
+/**
+ * # Styleguide sobrecarga
+ *
+ * ### Head
+ *
+ *     meta(name="viewport" content="width=device-width, initial-scale=1")
+ *     link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+ *     link(rel='stylesheet' href='_extras.css')
+ *     link(rel='stylesheet' href='../../data/styledown.css')
+ *     script(src='../../data/styledown.js')
+ *
+ * ### Body
+ *
+ *     .jumbotron.jumbotron-styleguide
+ *       .container
+ *         h1 Bootstrap styleguides
+ *         p
+ *           | This is a sample styleguide for Bootstrap that was generated using
+ *           | Styledown, a styleguide generator. They were taken from inline comments
+ *           | in the CSS.
+ *         p
+ *           a.btn.btn-default(href="https://github.com/styledown/styledown") About Styledown
+ *           a.btn.btn-default(href="https://github.com/styledown/styledown/tree/master/examples/bootstrap") See sources
+ *     .container
+ *       div(sg-content)
+ */
+
+
+
+
+/* SOBRECARGA MATERIAL DESIGN */
+
+.btn-cor-principal {
+  color: #183a84 !important;
+}
+
+.btn-cor-principal:hover {
+  background-color: #183a84 !important;
+  color: #fff !important;
+}
+
+.navbar {
+  box-shadow: none !important;
+}
+
+.navbar-center li {
+  width: 170px;
+}
+
+@media (min-width: 768px) {
+ .navbar-nav.navbar-center {
+   position: absolute;
+   left: 50%;
+   transform: translatex(-50%);
+  }
+}

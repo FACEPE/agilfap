@@ -1,12 +1,14 @@
-styledown = ../../bin/styledown
+bin = ./node_modules/.bin
+mdextract = $(bin)/mdextract
+browserify = $(bin)/browserify
+js_files = $(wildcard lib/*.js ./*.js)
 
-index.html: \
-	buttons.css \
-	forms.css \
-	lists.css \
-	panels.css \
-	tabs.css \
-	progress.css \
-	components.css \
-	_extras.css
-	$(styledown) $^ > $@
+docs/API.md: index.js
+	$(mdextract) -u $@
+
+dist: dist/styledown.js
+
+dist/styledown.js: lib/distribution.js $(js_files)
+	$(browserify) $< > $@
+
+.PHONY: dist
